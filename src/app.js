@@ -1,5 +1,6 @@
 const express = require('express');
 const { conectarDB } = require('./config/database');
+const equiposRoutes = require('./routes/equiposRoutes');
 
 const app = express();
 
@@ -12,5 +13,7 @@ app.get('/', (req, res) => {
         mensaje: 'API Cobertura Futbolistica funcionando'
     });
 });
+
+app.use('/api/equipos', equiposRoutes);
 
 module.exports = app;
